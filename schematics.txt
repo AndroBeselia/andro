@@ -1,0 +1,13 @@
+sqlmap -u http://35.198.135.192:32157/index.php --cookie="PHPSESSID=d2ffbe7989f6b07058268c9376fb4e38" --forms --columns --random-agent
+Schematics
+To solve this lab we can use dirsearch – it is and command line tool for brute forcing of directories and files in webserver .
+ 
+disrsearch – u URL
+ 
+so then we obtain a register endpoint  /register.php
+and we can use username   Admin :mikheli . so we just need to create the account.
+So when we are already registered and login into website we have just search field and we can put % into this field  and we will get the result.
+So we can open the burp suite and linux terminal , also we need to find the cookie .
+Sqlmap –cookie=”PHPSESSID”=…” -u URL/index.php –forms –columns –random-agent 
+And here we have CTF info
+So the vulnelability of this lab is SQL vulnerability , which is database vulnerability that allow,s an attacker to interfare with the queries that an application makes to its database.
