@@ -1,0 +1,29 @@
+Ping station Vulnerability - Command injection – 
+Vcadot da chavwerot rame ip, ver sheasrulebs chvens requests imito ro syntax erroria 
+- Shemdeg vcadot rame sityva mag: Hello, ar imushava radgan ip error 
+- Mere orive ertad da ar imushava da aqedan gamomdinare vcdit commands 
+- vcadot rame default ip da commandi - 1.1.1.1; ls -l 
+- Shemdeg vnaxulobt filebs da folderebs da vnaxavt flags da gavxsnit cat commandit 
+- 1.1.1.1; cat flag 
+- Mand vnaxavt ctfs 
+Small data leak 
+Vulnerability - Sql injection 
+- Hint User id 
+- Davregistrirdet 
+- Urlshi mivuwert hints im user ids da vxedavt ro sqlis problema aqvs 
+- Vcadot sqlmapis gamoyeneba 
+- Sqlmap -u ‘link/user?id=1’ --dbs - (erts vvaraudobt ro ari rootis id) 
+- Amoagdo sami database da shevidet publicshi - …. -D public –tables 
+- Amoagdo ctf araa dasrulebuli da vcadot tableshi sehsvla ro flagis gagrdzeleba sheidzla mand iyos - Public -T ‘ctf{…’ --columns 
+File crawler 
+Vulnerability - Local file inclusion (LFI) 
+- Temporary foldershi ari flag 
+- Websitebis 50 % vulnreability sheidzleba qondes inspectshi rame akldes da unda gavushvat inspectshi da vnaxot raxdeba shignit vxedavt ragac links - /local?image_name= chavwerot urlshi da gavushvat commandebi da raxan temporary foldershia vcadot default command /etc/passwd tu gaeshveba gaeshva - /local?image_name=..//..//..//etc/passwd - Axla radgan temporary folderia vwert tmp/flags da amoagdebs flags - /local?image_name=..///tmp/flag 
+Ultra crawler 
+Vulnerability – Local file inclusion (LFI) 
+- Burp intercept forward 
+- Send to repearter 
+- Url=file:///etc/passwd gamodis tu ara codebis sheyvana da gamovida 
+- Info aviget ro home ctfa 
+- Arsebobs home ctf da didi shansia ro mand iyos eg file da shevidet mand da raxdeba 
+- Serveri ari pythonze dawerili - Url=file:///home/ctf/app.py send (radgan pythonzea magito unda davwerot app.py) - So pythonis codi gveubneba ro tu headeri iqneba compant tld mashin gamoitans flags amito hosts vcvlit magit da vushvebt - POST / HTTP/1.1 - Host: company.tld Alien inclusion Vulnerability – server side request forgery terminal - php codia da gveubneba rom, starti roca udris files mag shemtxvevashi amoagdebs files, aqedan gamomdinare unda shevcvalot mxolod start. - Terminalshi vwert - curls ‘link/?start=’ --data ‘start=flag.php’ - Php imitoro phpzea dawerirli - Curl gvexmareba gatoelbashi Burpsuite - Rame ro movtxovot get unda shevcvalot postit - GETis magivrad POST - POST /?start=123 HTTP/1.1 - Boloshi unda davumatot - Start=flag.php Substitute Vulnerability - Remote code execution (RCE) - Admini unda shevcvalot ragacit da vcvlit codet da vaketebt injections da viyenebt 
